@@ -1,0 +1,1 @@
+# Path: US_Visa_Prediction/entity/artifact_entity.py
