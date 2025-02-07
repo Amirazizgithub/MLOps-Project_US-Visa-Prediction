@@ -1,8 +1,10 @@
 import os
 from pathlib import Path
 
+# Define the project name
 Project_Name = "US_Visa_Prediction"
 
+# Define the list of files to be created in the project
 list_of_files = [
     f"{Project_Name}/__init__.py",
     f"{Project_Name}/components/__init__.py",
@@ -37,7 +39,7 @@ list_of_files = [
     "config/schema.yaml",
 ]
 
-# Create the directories of folder and write the files if they do not exist
+# Create the directories of the folder and write the files if they do not exist
 for file in list_of_files:
     file_path = Path(file)
     if not file_path.exists():
