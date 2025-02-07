@@ -1,4 +1,4 @@
-# MLOps-Project---US-Visa-Prediction
+# MLOps-Project_US-Visa-Prediction
 
 # Download and Install this tools
 - VS Code: https://code.visualstudio.com/download
