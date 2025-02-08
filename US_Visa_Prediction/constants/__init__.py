@@ -6,7 +6,7 @@ from datetime import datetime
 # Constants
 DATABASE_NAME = os.getenv('DATABASE_NAME')
 COLLECTION_NAME = os.getenv('COLLECTION_NAME')
-MONGO_URI = os.getenv('MONGO_URI')
+MONGODB_URI = os.getenv('MONGODB_URI')
 
 PIPELINE_NAME: str = "usvisa_pipeline"
 ARTIFACTS_DIR: str = "artifacts"
