@@ -28,6 +28,8 @@ list_of_files = [
     f"{Project_Name}/utils/main_utils.py",
     "notebooks/__init__.py",
     "notebooks/mongo_db.ipynb",
+    "notebooks/EDA_US_Visa.ipynb",
+    "notebooks/Feature_Engineering_and_Model_Training.ipynb",
     "app.py",
     "requirements.txt",
     "README.md",
