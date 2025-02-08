@@ -14,4 +14,5 @@ evidently
 PyYAML
 boto3
 python-multipart
+python-dotenv
 -e .

@@ -26,7 +26,7 @@ list_of_files = [
     f"{Project_Name}/pipeline/prediction_pipeline.py",
     f"{Project_Name}/utils/__init__.py",
     f"{Project_Name}/utils/main_utils.py",
-    f"{Project_Name}/notebooks/__init__.py",
+    "notebooks/__init__.py",
     "notebooks/mongo_db.ipynb",
     "app.py",
     "requirements.txt",
