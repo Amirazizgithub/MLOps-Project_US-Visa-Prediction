@@ -6,6 +6,7 @@
 - Flowchart: https://whimsical.com/
 - MLOps Tool: https://www.evidentlyai.com/
 - MongoDB: https://www.mongodb.com/try/download/community
+- Data link: https://www.kaggle.com/datasets/moro23/easyvisa-dataset
 
 
 ## Git Commands
