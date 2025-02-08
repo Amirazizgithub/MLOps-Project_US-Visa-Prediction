@@ -12,7 +12,9 @@ uvicorn
 jinja2
 evidently
 PyYAML
+dill
 boto3
 python-multipart
 python-dotenv
+from-root
 -e .

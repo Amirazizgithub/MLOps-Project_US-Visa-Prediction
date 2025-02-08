@@ -28,3 +28,7 @@ python -m venv myvenv
 pip install -r requirements.txt
 ```
 
+# Create .env file for the hide of the credential (e.g. Mongo URI)
+.env
+
+
