@@ -5,6 +5,8 @@
 - Git: https://git-scm.com/downloads
 - Flowchart: https://whimsical.com/
 - MLOps Tool: https://www.evidentlyai.com/
+- MongoDB: https://www.mongodb.com/try/download/community
+
 
 ## Git Commands
 ```Bash
