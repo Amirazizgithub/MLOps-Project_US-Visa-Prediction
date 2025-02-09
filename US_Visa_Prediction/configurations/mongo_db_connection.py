@@ -1,5 +1,4 @@
 
-import os
 import sys
 from pymongo import MongoClient
 from US_Visa_Prediction.constants import DATABASE_NAME, MONGODB_URI
@@ -22,7 +21,7 @@ class MongoDBClient:
     def __init__(self, database_name=DATABASE_NAME) -> None:
         try:
             if MongoDBClient.client is None:
-                mongo_db_url = os.getenv(MONGODB_URI)
+                mongo_db_url = MONGODB_URI
                 if mongo_db_url is None:
                     raise Exception(f"Environment key: {MONGODB_URI} is not set.")
                 MongoDBClient.client = MongoClient(mongo_db_url, tlsCAFile=ca)
@@ -32,4 +31,8 @@ class MongoDBClient:
             logging.info("MongoDB connection succesfull")
         except Exception as e:
             raise USvisaException(e,sys)
+        
+    def mongodb_collections(self):
+        return self.database.list_collection_names()
 
+# MongoDBClient().mongodb_collections()

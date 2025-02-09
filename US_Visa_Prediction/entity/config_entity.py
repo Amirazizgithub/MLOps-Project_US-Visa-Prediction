@@ -21,7 +21,7 @@ training_pipeline_config: TrainingPipelineconfig = TrainingPipelineconfig()
 # Define the data ingestion config
 @dataclass
 class DataIngestionConfig:
-    data_ingestion_dir: str = os.path.join(training_pipeline_config.artifact_dir, DATA_INGESTION_DIR_NAME)
+    data_ingestion_dir: str = os.path.join(training_pipeline_config.ARTIFACTS_DIR, DATA_INGESTION_DIR_NAME)
     feature_store_file_path: str = os.path.join(data_ingestion_dir, DATA_INGESTION_FEATURE_STORE_DIR, FILE_NAME)
     training_file_path: str = os.path.join(data_ingestion_dir, DATA_INGESTION_INGESTED_DIR, TRAIN_FILE_NAME)
     testing_file_path: str = os.path.join(data_ingestion_dir, DATA_INGESTION_INGESTED_DIR, TEST_FILE_NAME)
@@ -32,7 +32,7 @@ class DataIngestionConfig:
 # Define the data validation config
 @dataclass
 class DataValidationConfig:
-    data_validation_dir: str = os.path.join(training_pipeline_config.artifact_dir, DATA_VALIDATION_DIR_NAME)
+    data_validation_dir: str = os.path.join(training_pipeline_config.ARTIFACTS_DIR, DATA_VALIDATION_DIR_NAME)
     drift_report_file_path: str = os.path.join(data_validation_dir, DATA_VALIDATION_DRIFT_REPORT_DIR,
                                                DATA_VALIDATION_DRIFT_REPORT_FILE_NAME)
     
@@ -41,7 +41,7 @@ class DataValidationConfig:
 # Define the data transformation config
 @dataclass
 class DataTransformationConfig:
-    data_transformation_dir: str = os.path.join(training_pipeline_config.artifact_dir, DATA_TRANSFORMATION_DIR_NAME)
+    data_transformation_dir: str = os.path.join(training_pipeline_config.ARTIFACTS_DIR, DATA_TRANSFORMATION_DIR_NAME)
     transformed_train_file_path: str = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,
                                                     TRAIN_FILE_NAME.replace("csv", "npy"))
     transformed_test_file_path: str = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,
@@ -55,7 +55,7 @@ class DataTransformationConfig:
 # Define the model trainer config
 @dataclass
 class ModelTrainerConfig:
-    model_trainer_dir: str = os.path.join(training_pipeline_config.artifact_dir, MODEL_TRAINER_DIR_NAME)
+    model_trainer_dir: str = os.path.join(training_pipeline_config.ARTIFACTS_DIR, MODEL_TRAINER_DIR_NAME)
     trained_model_file_path: str = os.path.join(model_trainer_dir, MODEL_TRAINER_TRAINED_MODEL_DIR, MODEL_FILE_NAME)
     expected_accuracy: float = MODEL_TRAINER_EXPECTED_SCORE
     model_config_file_path: str = MODEL_TRAINER_MODEL_CONFIG_FILE_PATH

@@ -2,6 +2,8 @@
 
 import os
 from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv()
 
 # Constants
 DATABASE_NAME = os.getenv('DATABASE_NAME')
@@ -14,7 +16,7 @@ ARTIFACTS_DIR: str = "artifacts"
 TRAIN_FILE_NAME: str = "train.csv"
 TEST_FILE_NAME: str = "test.csv"
 
-FILE_NAME: str = "us_visa.csv"
+FILE_NAME: str = "US_Visa_Data.csv"
 MODEL_FILE_NAME = os.getenv('MODEL_FILE_NAME')
 
 TARGET_COLUMN = "case_status"
@@ -26,7 +28,7 @@ SCHEMA_FILE_PATH = os.path.join("config", "schema.yaml")
 """
 Data Ingestion related constant start with DATA_INGESTION VAR NAME
 """
-DATA_INGESTION_COLLECTION_NAME: str = "visa_data"
+DATA_INGESTION_COLLECTION_NAME: str = "US_Visa_Data"
 DATA_INGESTION_DIR_NAME: str = "data_ingestion"
 DATA_INGESTION_FEATURE_STORE_DIR: str = "feature_store"
 DATA_INGESTION_INGESTED_DIR: str = "ingested"

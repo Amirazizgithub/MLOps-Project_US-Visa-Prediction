@@ -40,3 +40,5 @@ class USvisaData:
             return df
         except Exception as e:
             raise USvisaException(e,sys)
+        
+# USvisaData().export_collection_as_dataframe(collection_name=COLLECTION_NAME)
