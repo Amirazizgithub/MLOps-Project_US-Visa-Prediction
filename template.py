@@ -22,6 +22,7 @@ list_of_files = [
     f"{Project_Name}/entity/__init__.py",
     f"{Project_Name}/entity/config_entity.py",
     f"{Project_Name}/entity/artifact_entity.py",
+    f"{Project_Name}/entity/estimator.py",
     f"{Project_Name}/exceptions/__init__.py",
     f"{Project_Name}/logger/__init__.py",
     f"{Project_Name}/pipeline/__init__.py",
