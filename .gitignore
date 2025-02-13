@@ -86,7 +86,6 @@ profile_default/
 ipython_config.py
 demo.py
 test.py
-notebooks/mongo_db.ipynb
 
 
 
