@@ -25,7 +25,6 @@ git commit -m "Updated"
 git push origin main
 ```
 
-
 ## How to run?
 
 1. Craete virtual environment in VS Code terminal
