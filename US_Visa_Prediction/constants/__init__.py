@@ -3,12 +3,13 @@
 import os
 from datetime import datetime
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # Constants
-DATABASE_NAME = os.getenv('DATABASE_NAME')
-COLLECTION_NAME = os.getenv('COLLECTION_NAME')
-MONGODB_URI = os.getenv('MONGODB_URI')
+DATABASE_NAME = os.getenv("DATABASE_NAME")
+COLLECTION_NAME = os.getenv("COLLECTION_NAME")
+MONGODB_URI = os.getenv("MONGODB_URI")
 
 PIPELINE_NAME: str = "usvisa_pipeline"
 ARTIFACTS_DIR: str = "artifacts"
@@ -17,12 +18,16 @@ TRAIN_FILE_NAME: str = "train.csv"
 TEST_FILE_NAME: str = "test.csv"
 
 FILE_NAME: str = "US_Visa_Data.csv"
-MODEL_FILE_NAME = os.getenv('MODEL_FILE_NAME')
+MODEL_FILE_NAME = os.getenv("MODEL_FILE_NAME")
 
 TARGET_COLUMN = "case_status"
 CURRENT_YEAR = datetime.today().year
 PREPROCSSING_OBJECT_FILE_NAME = "preprocessing.pkl"
 SCHEMA_FILE_PATH = os.path.join("config", "schema.yaml")
+
+AWS_ACCESS_KEY_ID_ENV_KEY = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY_ENV_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_REGION_ENV_KEY = os.getenv("AWS_REGION")
 
 
 """
@@ -41,8 +46,6 @@ Data Validation realted contant start with DATA_VALIDATION VAR NAME
 DATA_VALIDATION_DIR_NAME: str = "data_validation"
 DATA_VALIDATION_DRIFT_REPORT_DIR: str = "drift_report"
 DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: str = "report.yaml"
-
-
 
 
 """
@@ -67,7 +70,7 @@ MODEL_TRAINER_MODEL_CONFIG_FILE_PATH: str = os.path.join("config", "model.yaml")
 MODEL EVALUATION related constant 
 """
 MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
-MODEL_BUCKET_NAME = "usvisa-model2024"
+AWS_MODEL_BUCKET_NAME = os.getenv("AWS_MODEL_BUCKET_NAME")
 MODEL_PUSHER_S3_KEY = "model-registry"
 
 
