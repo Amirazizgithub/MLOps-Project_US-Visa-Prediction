@@ -13,9 +13,13 @@
 
 ```bash
 git add .
+```
 
+```bash
 git commit -m "Updated"
+```
 
+```bash
 git push origin main
 ```
 
@@ -46,15 +50,15 @@ pip install -r requirements.txt
 
 ### Export the  environment variable
 ```bash
-
-
 export MONGODB_URL="mongodb+srv://<username>:<password>...."
+```
 
+```bash
 export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
+```
 
+```bash
 export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
-
-
 ```
 ##### Alternatively, you can create a .env file and mention all the credentials. Please note that the .env file should be updated in the .gitignore file.
 
