@@ -1,5 +1,7 @@
 # MLOPs-Production-Ready-Machine-Learning-Project
 
+#### Note: I am hiding all my personal credentials. If you are following my repository, please replace the dummy credentials with your actual credentials.
+
 - Anaconda: https://www.anaconda.com/
 - Vs code: https://code.visualstudio.com/download
 - Git: https://git-scm.com/
@@ -26,14 +28,17 @@ git push origin main
 
 ## How to run?
 
+1. Craete virtual environment in VS Code terminal
 ```bash
-conda create -n visa python=3.8 -y
+python -m venv venv
 ```
 
+2. Activate the virtual environment
 ```bash
-conda activate visa
+venv\Scripts\activate
 ```
 
+3. Install the required packages in the virtual environment
 ```bash
 pip install -r requirements.txt
 ```
@@ -61,6 +66,7 @@ export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
 export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
 ```
 ##### Alternatively, you can create a .env file and mention all the credentials. Please note that the .env file should be updated in the .gitignore file.
+
 
 
 # AWS-CICD-Deployment-with-Github-Actions
