@@ -182,6 +182,9 @@ class TrainPipeline:
     def run_pipeline(
         self,
     ) -> None:
+        """
+        This method of TrainPipeline class is responsible for running complete pipeline
+        """
         try:
             data_ingestion_artifact = self.start_data_ingestion()
             data_validation_artifact = self.start_data_validation(
