@@ -7,25 +7,24 @@ from US_Visa_Prediction.exceptions import USvisaException
 from US_Visa_Prediction.logger import logging
 
 
-
 class TargetValueMapping:
     def __init__(self):
-        self.Certified:int = 0
-        self.Denied:int = 1
+        self.Certified: int = 0
+        self.Denied: int = 1
+
     def _asdict(self):
         return self.__dict__
+
     def reverse_mapping(self):
         mapping_response = self._asdict()
-        return dict(zip(mapping_response.values(),mapping_response.keys()))
-    
-
+        return dict(zip(mapping_response.values(), mapping_response.keys()))
 
 
 class USvisaModel:
     def __init__(self, preprocessing_object: Pipeline, trained_model_object: object):
         """
         :param preprocessing_object: Input Object of preprocesser
-        :param trained_model_object: Input Object of trained model 
+        :param trained_model_object: Input Object of trained model
         """
         self.preprocessing_object = preprocessing_object
         self.trained_model_object = trained_model_object
@@ -54,4 +53,3 @@ class USvisaModel:
 
     def __str__(self):
         return f"{type(self.trained_model_object).__name__}()"
-    

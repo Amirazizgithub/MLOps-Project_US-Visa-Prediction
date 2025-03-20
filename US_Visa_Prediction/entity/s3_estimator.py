@@ -10,7 +10,11 @@ class USvisaEstimator:
     This class is used to save and retrieve us_visas model in s3 bucket and to do prediction
     """
 
-    def __init__(self,bucket_name,model_path,):
+    def __init__(
+        self,
+        bucket_name,
+        model_path,
+    ):
         """
         :param bucket_name: Name of your model bucket
         :param model_path: Location of your model in bucket
@@ -18,25 +22,28 @@ class USvisaEstimator:
         self.bucket_name = bucket_name
         self.s3 = SimpleStorageService()
         self.model_path = model_path
-        self.loaded_model:USvisaModel=None
+        self.loaded_model: USvisaModel = None
 
-
-    def is_model_present(self,model_path):
+    def is_model_present(self, model_path):
         try:
-            return self.s3.s3_key_path_available(bucket_name=self.bucket_name, s3_key=model_path)
+            return self.s3.s3_key_path_available(
+                bucket_name=self.bucket_name, s3_key=model_path
+            )
         except USvisaException as e:
             print(e)
             return False
 
-    def load_model(self,)->USvisaModel:
+    def load_model(
+        self,
+    ) -> USvisaModel:
         """
         Load the model from the model_path
         :return:
         """
 
-        return self.s3.load_model(self.model_path,bucket_name=self.bucket_name)
+        return self.s3.load_model(self.model_path, bucket_name=self.bucket_name)
 
-    def save_model(self,from_file,remove:bool=False)->None:
+    def save_model(self, from_file, remove: bool = False) -> None:
         """
         Save the model to the model_path
         :param from_file: Your local system model path
@@ -44,16 +51,16 @@ class USvisaEstimator:
         :return:
         """
         try:
-            self.s3.upload_file(from_file,
-                                to_filename=self.model_path,
-                                bucket_name=self.bucket_name,
-                                remove=remove
-                                )
+            self.s3.upload_file(
+                from_file,
+                to_filename=self.model_path,
+                bucket_name=self.bucket_name,
+                remove=remove,
+            )
         except Exception as e:
             raise USvisaException(e, sys)
 
-
-    def predict(self,dataframe:DataFrame):
+    def predict(self, dataframe: DataFrame):
         """
         :param dataframe:
         :return:

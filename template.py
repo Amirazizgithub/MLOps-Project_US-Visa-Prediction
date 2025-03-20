@@ -60,4 +60,3 @@ for file in list_of_files:
         with open(file, "w") as f:
             f.write("# Path: " + file)
 print("Project structure created successfully!")
-

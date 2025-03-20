@@ -1,4 +1,3 @@
-
 import sys
 from pymongo import MongoClient
 from US_Visa_Prediction.constants import DATABASE_NAME, MONGODB_URI
@@ -8,14 +7,16 @@ import certifi
 
 ca = certifi.where()
 
+
 class MongoDBClient:
     """
     Class Name :   export_data_into_feature_store
-    Description :   This method exports the dataframe from mongodb feature store as dataframe 
-    
+    Description :   This method exports the dataframe from mongodb feature store as dataframe
+
     Output      :   connection to mongodb database
     On Failure  :   raises an exception
     """
+
     client = None
 
     def __init__(self, database_name=DATABASE_NAME) -> None:
@@ -30,9 +31,10 @@ class MongoDBClient:
             self.database_name = database_name
             logging.info("MongoDB connection succesfull")
         except Exception as e:
-            raise USvisaException(e,sys)
-        
+            raise USvisaException(e, sys)
+
     def mongodb_collections(self):
         return self.database.list_collection_names()
+
 
 # MongoDBClient().mongodb_collections()
