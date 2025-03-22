@@ -93,7 +93,7 @@ export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
 
 	5. Lauch your docker image in EC2
 
-	#Policy:
+	#Policy: 
 
 	1. AmazonEC2ContainerRegistryFullAccess
 
