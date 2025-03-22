@@ -85,7 +85,7 @@ export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
 
 	1. Build docker image of the source code
 
-	2. Push your docker image to ECR 
+	2. Push your docker image to ECR
 
 	3. Launch Your EC2 
 
