@@ -8,7 +8,7 @@ from US_Visa_Prediction.entity.config_entity import USvisaPredictorConfig
 from US_Visa_Prediction.entity.s3_estimator import USvisaEstimator
 from US_Visa_Prediction.exceptions import USvisaException
 from US_Visa_Prediction.logger import logging
-from US_Visa_Prediction.utils.main_utils import read_yaml_file
+from US_Visa_Prediction.utils.main_utils import main_utils
 from pandas import DataFrame
 
 
@@ -96,7 +96,7 @@ class USvisaClassifier:
         :param prediction_pipeline_config: Configuration for prediction the value
         """
         try:
-            # self.schema_config = read_yaml_file(SCHEMA_FILE_PATH)
+            # self.schema_config = main_utils.read_yaml_file(SCHEMA_FILE_PATH)
             self.prediction_pipeline_config = prediction_pipeline_config
         except Exception as e:
             raise USvisaException(e, sys)

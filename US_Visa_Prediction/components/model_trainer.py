@@ -11,12 +11,7 @@ from neuro_mf import ModelFactory
 
 from US_Visa_Prediction.exceptions import USvisaException
 from US_Visa_Prediction.logger import logging
-from US_Visa_Prediction.utils.main_utils import (
-    load_numpy_array_data,
-    read_yaml_file,
-    load_object,
-    save_object,
-)
+from US_Visa_Prediction.utils.main_utils import main_utils
 from US_Visa_Prediction.entity.config_entity import ModelTrainerConfig
 from US_Visa_Prediction.entity.artifact_entity import (
     DataTransformationArtifact,
@@ -99,10 +94,10 @@ class ModelTrainer:
         On Failure  :   Write an exception log and then raise an exception
         """
         try:
-            train_arr = load_numpy_array_data(
+            train_arr = main_utils.load_numpy_array_data(
                 file_path=self.data_transformation_artifact.transformed_train_file_path
             )
-            test_arr = load_numpy_array_data(
+            test_arr = main_utils.load_numpy_array_data(
                 file_path=self.data_transformation_artifact.transformed_test_file_path
             )
 
@@ -110,7 +105,7 @@ class ModelTrainer:
                 train=train_arr, test=test_arr
             )
 
-            preprocessing_obj = load_object(
+            preprocessing_obj = main_utils.load_object(
                 file_path=self.data_transformation_artifact.transformed_object_file_path
             )
 
@@ -127,7 +122,7 @@ class ModelTrainer:
             )
             logging.info("Created usvisa model object with preprocessor and model")
             logging.info("Created best model file path.")
-            save_object(self.model_trainer_config.trained_model_file_path, usvisa_model)
+            main_utils.save_object(self.model_trainer_config.trained_model_file_path, usvisa_model)
 
             model_trainer_artifact = ModelTrainerArtifact(
                 trained_model_file_path=self.model_trainer_config.trained_model_file_path,

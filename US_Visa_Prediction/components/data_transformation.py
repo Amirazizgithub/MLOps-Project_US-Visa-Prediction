@@ -21,12 +21,7 @@ from US_Visa_Prediction.entity.artifact_entity import (
 )
 from US_Visa_Prediction.exceptions import USvisaException
 from US_Visa_Prediction.logger import logging
-from US_Visa_Prediction.utils.main_utils import (
-    save_object,
-    save_numpy_array_data,
-    read_yaml_file,
-    drop_columns,
-)
+from US_Visa_Prediction.utils.main_utils import main_utils
 from US_Visa_Prediction.entity.estimator import (
     TargetValueMapping,
 )  ## Mapping the target values (Certified, Denied) to (0, 1)
@@ -47,7 +42,7 @@ class DataTransformation:
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_transformation_config = data_transformation_config
             self.data_validation_artifact = data_validation_artifact
-            self._schema_config = read_yaml_file(file_path=SCHEMA_FILE_PATH)
+            self._schema_config = main_utils.read_yaml_file(file_path=SCHEMA_FILE_PATH)
         except Exception as e:
             raise USvisaException(e, sys)
 
@@ -146,7 +141,7 @@ class DataTransformation:
 
                 logging.info("drop the columns in drop_cols of Training dataset")
 
-                input_feature_train_df = drop_columns(
+                input_feature_train_df = main_utils.drop_columns(
                     df=input_feature_train_df, cols=drop_cols
                 )
 
@@ -164,7 +159,7 @@ class DataTransformation:
 
                 logging.info("Added company_age column to the Test dataset")
 
-                input_feature_test_df = drop_columns(
+                input_feature_test_df = main_utils.drop_columns(
                     df=input_feature_test_df, cols=drop_cols
                 )
 
@@ -222,15 +217,15 @@ class DataTransformation:
                     input_feature_test_final, np.array(target_feature_test_final)
                 ]
 
-                save_object(
+                main_utils.save_object(
                     self.data_transformation_config.transformed_object_file_path,
                     preprocessor,
                 )
-                save_numpy_array_data(
+                main_utils.save_numpy_array_data(
                     self.data_transformation_config.transformed_train_file_path,
                     array=train_arr,
                 )
-                save_numpy_array_data(
+                main_utils.save_numpy_array_data(
                     self.data_transformation_config.transformed_test_file_path,
                     array=test_arr,
                 )

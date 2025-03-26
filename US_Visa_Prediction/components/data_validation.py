@@ -11,7 +11,7 @@ from pandas import DataFrame
 
 from US_Visa_Prediction.exceptions import USvisaException
 from US_Visa_Prediction.logger import logging
-from US_Visa_Prediction.utils.main_utils import read_yaml_file, write_yaml_file
+from US_Visa_Prediction.utils.main_utils import main_utils
 from US_Visa_Prediction.entity.artifact_entity import (
     DataIngestionArtifact,
     DataValidationArtifact,
@@ -33,7 +33,7 @@ class DataValidation:
         try:
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_validation_config = data_validation_config
-            self._schema_config = read_yaml_file(file_path=SCHEMA_FILE_PATH)
+            self._schema_config = main_utils.read_yaml_file(file_path=SCHEMA_FILE_PATH)
         except Exception as e:
             raise USvisaException(e, sys)
 
@@ -116,7 +116,7 @@ class DataValidation:
             report = data_drift_profile.json()
             json_report = json.loads(report)
 
-            write_yaml_file(
+            main_utils.write_yaml_file(
                 file_path=self.data_validation_config.drift_report_file_path,
                 content=json_report,
             )
